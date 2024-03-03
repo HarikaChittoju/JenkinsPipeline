@@ -1,18 +1,18 @@
 pipeline{
 agent {
 docker{
-image 'maven:latest'
+image 'java:latest'
 }
 }
 stages{
 stage('Build'){
 steps{
-sh 'mvn compile'
+sh 'javac HelloWorld.java'
 }
 }
 stage('Run'){
 steps{
-sh 'java -cp .HelloWorld'
+sh 'java HelloWorld'
 }
 }
 }
